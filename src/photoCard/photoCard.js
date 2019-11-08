@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from "react";
 import axios from "axios";
 import CardMaker from "./cardMaker";
+import styled from "styled-components";
 
 const PhotoCard = () => {
     const [picture, setPicture] = useState([]);
@@ -17,11 +18,14 @@ const PhotoCard = () => {
     }, [])
 
     return (
-        <div className="photo">
+        <div>
             <CardMaker
             url={picture.url}
+            title={picture.title}
             date={picture.date}
-            explanation={picture.explanation}/>
+            explanation={picture.explanation}
+            copyright={picture.copyright}
+            />
             
         </div>
     )
